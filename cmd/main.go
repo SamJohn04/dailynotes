@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 
 	"github.com/SamJohn04/dailynotes/internal/daily"
@@ -21,9 +22,9 @@ func main() {
 }
 
 func printError(err error) {
-	if err.Error() == "usage error" {
+	if errors.Is(err, utils.ErrUsage) {
 		fmt.Println("Usage: daily new [FILENAME]")
-	} else if err.Error() == "unimplemented error" {
+	} else if errors.Is(err, utils.ErrNotImplemented) {
 		fmt.Println("Only new is currently implemented.")
 	} else {
 		fmt.Println(err)
