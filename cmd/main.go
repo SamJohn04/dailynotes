@@ -14,7 +14,10 @@ func main() {
 		return
 	}
 
-	utils.WriteNewFile(filename, daily.Boilerplate())
+	err = utils.WriteNewFile(filename, daily.Boilerplate())
+	if err != nil {
+		fmt.Println("Error:", err)
+	}
 }
 
 func printError(err error) {

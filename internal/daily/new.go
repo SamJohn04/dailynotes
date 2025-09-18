@@ -1,14 +1,10 @@
 package daily
 
 func Boilerplate() string {
-	s := "DAY\n"
-	s += "\n"
-
-	s += "Gate Preparations\n"
+	s := "Gate Preparations\n"
 	s += "-----------------\n"
 	s += "What I learned today: \n"
-	s += "Explain?\n"
-	s += "\n"
+	s += "Link to explaination: \n"
 	s += "What I revised today (preferably from last week): \n"
 	s += "How well I remember it: \n"
 	s += "\n"
@@ -28,8 +24,6 @@ func Boilerplate() string {
 	s += "Chess Endgames\n"
 	s += "-------------\n"
 	s += "What I learned today: \n"
-	s += "Explain?\n"
-	s += "\n"
 	s += "\n"
 
 	s += "Chess Games\n"
