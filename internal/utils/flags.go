@@ -13,11 +13,18 @@ func ParseArgs() (string, error) {
 	if len(os.Args) == 1 {
 		return "", ErrUsage
 	}
-	if os.Args[1] != "new" {
+
+	switch os.Args[1] {
+	case "new":
+		if len(os.Args) > 2 {
+			return os.Args[2], nil
+		}
+		return fileName(), nil
+	default:
 		return "", ErrNotImplemented
 	}
-	if len(os.Args) > 2 {
-		return os.Args[2], nil
-	}
-	return time.Now().Format("02-01-2006.txt"), nil
+}
+
+func fileName() string {
+	return time.Now().Format("02-01-2006.txt")
 }
