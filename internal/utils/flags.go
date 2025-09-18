@@ -6,12 +6,15 @@ import (
 	"time"
 )
 
+var ErrUsage = errors.New("usage error")
+var ErrNotImplemented = errors.New("unimplemented error")
+
 func ParseArgs() (string, error) {
 	if len(os.Args) == 1 {
-		return "", errors.New("usage error")
+		return "", ErrUsage
 	}
 	if os.Args[1] != "new" {
-		return "", errors.New("unimplemented error")
+		return "", ErrNotImplemented
 	}
 	if len(os.Args) > 2 {
 		return os.Args[2], nil
